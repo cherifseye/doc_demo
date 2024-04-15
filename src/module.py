@@ -20,6 +20,7 @@ class DummyClass:
         Args:
             attribute1 (int): The value for attribute1.
             attribute2 (str): The value for attribute2.
+            attribute3 (str): The value for attribute3.
         """
         self.attribute1 = attribute1
         self.attribute2 = attribute2
@@ -27,7 +28,7 @@ class DummyClass:
     def method1(self, param1, param2):
         """
         Perform some operation using param1 and param2.
-        
+
         Let's add small modification here to check what will happen?/
 
         Args:
