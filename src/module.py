@@ -15,6 +15,8 @@ class DummyClass:
         """
         Initializes the DummyClass with the given attributes.
 
+        Let's add small modification here to check what will happen?/
+
         Args:
             attribute1 (int): The value for attribute1.
             attribute2 (str): The value for attribute2.
