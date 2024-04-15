@@ -1,17 +1,16 @@
 name: docs_pages_workflow
- 
-# execute this workflow automatically when a we push to main
+
 on:
   push:
     branches: [ main ]
- 
+
 jobs:
- 
+
   build_docs_job:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
- 
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -28,10 +27,9 @@ jobs:
           python -m pip install sphinx-rtd-theme
           python -m pip install ghp-import
 
-      - name: make the sphinx docs
+      - name: Build Html
         run: |
-          cd docs/
-          make html
+          make -C docs/ html
 
       - name: Run ghp-import
         run: |
@@ -42,5 +40,5 @@ jobs:
         with:
             publish_branch: gh-pages
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: _build/html
+            publish_dir: docs/_build/html
             force_orphan: true
