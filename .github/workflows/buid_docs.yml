@@ -1,6 +1,6 @@
 name: docs_pages_workflow
  
-# execute this workflow automatically when a we push to master
+# execute this workflow automatically when a we push to main
 on:
   push:
     branches: [ main ]
@@ -30,7 +30,7 @@ jobs:
 
       - name: make the sphinx docs
         run: |
-          cd docs/ 
+          cd docs/
           make html
 
       - name: Run ghp-import
@@ -40,4 +40,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+            publish_branch: gh-pages
             github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: _build/html
+            force_orphan: true
