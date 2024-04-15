@@ -27,6 +27,8 @@ class DummyClass:
     def method1(self, param1, param2):
         """
         Perform some operation using param1 and param2.
+        
+        Let's add small modification here to check what will happen?/
 
         Args:
             param1 (int): Description of param1.
